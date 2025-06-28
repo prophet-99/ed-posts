@@ -1,0 +1,25 @@
+@let service = offerService();
+
+<mat-card class="sh-card" appearance="outlined">
+  <mat-card-header class="sh-card__header">
+    <mat-card-title>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Icono en forma de lupa"
+        [fontIcon]="service.icon"
+      />
+      <p>{{ service.title }}</p>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="sh-card__body">{{ service.description }}</p>
+  </mat-card-content>
+  <mat-card-footer class="sh-card__footer">
+    <mat-chip-set>
+      @for (chip of service.tags; track $index) {
+      <mat-chip>{{ chip }}</mat-chip>
+
+      }
+    </mat-chip-set>
+  </mat-card-footer>
+</mat-card>

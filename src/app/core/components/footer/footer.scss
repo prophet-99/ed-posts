@@ -1,0 +1,10 @@
+.sh-footer {
+  height: 5vh;
+  background-color: var(--mat-sys-primary-container);
+  color: var(--mat-sys-primary);
+  padding: 4em 8rem;
+  &__main {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}

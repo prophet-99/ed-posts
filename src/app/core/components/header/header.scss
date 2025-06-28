@@ -1,0 +1,44 @@
+:host {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+}
+
+.sh-logo {
+  position: absolute;
+  height: 2rem;
+}
+
+.sh-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 4rem;
+  &__link {
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease-out;
+    &:hover {
+      color: var(--mat-sys-primary);
+    }
+  }
+}
+
+.sh-additional {
+  position: absolute;
+  right: 0;
+  background-color: var(--mat-sys-primary-container);
+  color: var(--mat-sys-primary);
+  border-radius: 0.5rem 0 0 0.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  gap: 2rem;
+  p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

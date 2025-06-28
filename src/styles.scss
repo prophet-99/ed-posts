@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: transparent,
+      container-text-color: #fff,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+  @include mat.theme(
+    (
+      typography: "Poppins, sans-serif",
+    )
+  );
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}

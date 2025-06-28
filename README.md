@@ -1,59 +1,36 @@
-# EdPosts
+# 🚀 EDPost SSR – Aplicación Blog con Angular 20 + SSR + SSG
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+EDPost SSR es una aplicación construida como parte de un taller práctico con Angular 20. Combina Server-Side Rendering (SSR) y Prerendering (SSG) para ofrecer un blog rápido, accesible y optimizado para SEO. Además, incorpora inteligencia artificial como GitHub Copilot y ChatGPT para acelerar el desarrollo.
 
-## Development server
+## 🔍 Características principales
 
-To start a local development server, run:
+- ✅ Angular 20 con `@angular/ssr` y renderizado híbrido (SSR + SSG)
+- 📰 Secciones reales como `/actualidad` y `/blog/:slug`
+- ⚡ SEO optimizado con metadatos dinámicos (`Title`, `Meta`, Open Graph)
+- 🤖 Asistencia con inteligencia artificial para generación de contenido y debugging
+- 🎨 UI basada en Angular Material con diseño responsivo
+- 🌐 Desplegable en entornos Node.js como Railway o Render
 
-```bash
-ng serve
-```
+## 🧪 Validaciones y optimización
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- ✔️ HTML inicial pre-renderizado
+- ✔️ Hydration validado (si Angular 17+)
+- ✔️ Lighthouse ≥ 90 en rendimiento y SEO
+- ✔️ Checklist técnico para despliegue productivo
 
-## Code scaffolding
+## 🤖 IA y herramientas utilizadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- GitHub Copilot para generación de código y componentes
+- ChatGPT para generación de metadatos, textos SEO y debugging
+- Lighthouse + DevTools para medición de performance
 
-```bash
-ng generate component component-name
-```
+## 📦 Despliegue
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Railway
+- Render
+- VPS propio con Node.js + PM2
 
-```bash
-ng generate --help
-```
+## Referencias
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular.dev](https://angular.dev)
+- [EDteam](https://ed.team)

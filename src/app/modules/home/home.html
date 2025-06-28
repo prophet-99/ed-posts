@@ -1,0 +1,21 @@
+<section class="sh-heroe">
+  <article class="sh-heroe__container">
+    <h1>ED Posts</h1>
+    <p>
+      Bienvenido a nuestra plataforma donde exploramos lo último en tecnología y
+      renderizado del lado del servidor (SSR).🎱
+    </p>
+  </article>
+</section>
+<section class="sh-services">
+  <small class="sh-services__info">Sección Servicios</small>
+  <h2 class="sh-services__title">
+    Una amplia gama de servicios para ti, pensados para impulsar tu crecimiento
+    y facilitar tus proyectos tecnológicos.
+  </h2>
+  <article class="sh-services__cards">
+    @for (offerService of offerServices(); track offerService.id) {
+    <app-service-card [offerService]="offerService" />
+    }
+  </article>
+</section>
