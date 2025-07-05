@@ -1,0 +1,18 @@
+<mat-card
+  class="sh-hybrid-card"
+  [class.sh-hybrid-card--vertical]="type() === 'vertical'"
+  [class.sh-hybrid-card--horizontal]="type() === 'horizontal'"
+  appearance="outlined"
+>
+  <mat-card-content>
+    <img class="sh-hybrid-card__thumb" [src]="post()?.image" />
+    <section class="sh-hybrid-card__body">
+      <h4 class="sh-hybrid-card__title">{{ post()?.title }}</h4>
+      <div class="sh-hybrid-card__date">
+        <mat-icon aria-label="Reloj" fontIcon="schedule" />
+        <span>Publicado el {{ post()?.date }}</span>
+      </div>
+      <button mat-button color="primary">Ver más</button>
+    </section>
+  </mat-card-content>
+</mat-card>

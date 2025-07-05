@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 
-import { Home } from '@/modules/index';
-
 export const routes: Routes = [
   {
     path: '',
-    component: Home,
+    loadComponent: () => import('@/modules/index').then((m) => m.Home),
+  },
+  {
+    path: 'actualidad',
+    loadComponent: () => import('@/modules/index').then((m) => m.Highlight),
   },
 ];

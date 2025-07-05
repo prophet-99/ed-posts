@@ -4,10 +4,16 @@
 :root {
   @include mat.toolbar-overrides(
     (
-      container-background-color: transparent,
+      container-background-color: hsla(0deg 0% 0% / 75%),
       container-text-color: #fff,
     )
   );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,

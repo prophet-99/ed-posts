@@ -1,0 +1,41 @@
+<section class="sh-highlight">
+  <article class="sh-highlight__section">
+    <small class="sh-highlight__info">Noticias destacadas</small>
+    <h2 class="sh-highlight__title">
+      Mantente informado con las noticias, novedades y actualizaciones más
+      relevantes del momento para que no te pierdas de nada importante.
+    </h2>
+    <div class="sh-highlight__notice">
+      <section
+        class="sh-highlight__notice-main"
+        style="
+          --main-notice: url({{ mainNotice()?.image }});
+        "
+      >
+        <h3>{{ mainNotice()?.title }}</h3>
+        <p class="sh-highlight__notice-date">
+          <mat-icon aria-label="Reloj" fontIcon="schedule" />
+          <span>Publicado el {{ mainNotice()?.date }}</span>
+        </p>
+      </section>
+      <section class="sh-highlight__notice-list">
+        @for (notice of notices(); track notice.id) {
+        <app-hybrid-card type="horizontal" [post]="notice" />
+        }
+      </section>
+    </div>
+  </article>
+
+  <article class="sh-highlight__section">
+    <small class="sh-highlight__info">Nuestros últimos blogs</small>
+    <h2 class="sh-highlight__title">
+      Explora nuestros blogs más recientes, donde compartimos ideas, reflexiones
+      y conocimientos sobre diversos temas de interés.
+    </h2>
+    <section class="sh-highlight__post">
+      @for (blog of blogs(); track blog.id) {
+      <app-hybrid-card type="vertical" [post]="blog" />
+      }
+    </section>
+  </article>
+</section>

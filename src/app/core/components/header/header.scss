@@ -6,7 +6,6 @@
 
 .sh-logo {
   position: absolute;
-  height: 2rem;
 }
 
 .sh-container {
@@ -18,7 +17,15 @@
     font-weight: 600;
     cursor: pointer;
     transition: color 0.3s ease-out;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+    &:visited {
+      color: #fff;
+    }
     &:hover {
+      color: var(--mat-sys-primary);
+    }
+    &.is-active {
       color: var(--mat-sys-primary);
     }
   }
