@@ -5,20 +5,23 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { getBlogById, getBlogIds, getHighlight, getServices } from './api';
+//* 👀 Descomment in development
+// import { getBlogById, getBlogIds, getHighlight, getServices } from './api';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+//* 👀 Descomment in development
 // Example requests for API REST
-app.get('/api/services', getServices);
-app.get('/api/highlight', getHighlight);
-app.get('/api/blog/ids', getBlogIds);
-app.get('/api/blog/:id', getBlogById);
+// app.get('/api/services', getServices);
+// app.get('/api/highlight', getHighlight);
+// app.get('/api/blog/ids', getBlogIds);
+// app.get('/api/blog/:id', getBlogById);
 
 /**
  * Serve static files from /browser
@@ -32,9 +35,22 @@ app.use(
 );
 
 /**
- * Handle all other requests by rendering the Angular application.
+ * 🧱 Prerendered HTML files are served from the browserDistFolder
  */
 app.use((req, res, next) => {
+  const htmlPath = join(browserDistFolder, req.url, 'index.html');
+  if (existsSync(htmlPath)) {
+    console.log(`🧱 Serving prerendered HTML for ${req.url}`);
+    return res.sendFile(htmlPath);
+  }
+  next();
+});
+
+/**
+ * ⚡ Handle all other requests by rendering the Angular application.
+ */
+app.use((req, res, next) => {
+  console.log(`⚡ Rendering SSR HTML  for ${req.url}`);
   angularApp
     .handle(req)
     .then((response) =>

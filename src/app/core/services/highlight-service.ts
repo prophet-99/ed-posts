@@ -4,7 +4,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { type Highlight } from '@/core/models';
-import { environment } from '@/environments/environment.development';
+import { environment } from '@/environments/environment';
 
 @Injectable({
   providedIn: 'root',

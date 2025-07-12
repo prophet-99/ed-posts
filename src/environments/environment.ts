@@ -1,3 +1,3 @@
 export const environment = {
-  baseURL: 'http://localhost:4200/api',
+  baseURL: 'https://ed-posts-api-production.up.railway.app/api',
 };

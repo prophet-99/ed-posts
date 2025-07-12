@@ -28,8 +28,13 @@
     }
   }
   &--horizontal &__thumb {
+    // max-width: 200px;
+    // height: auto;
+    width: 100%;
     max-width: 200px;
     height: auto;
+    object-fit: cover;
+    aspect-ratio: 2 / 1;
   }
   &--horizontal &__body {
     padding-inline-start: 0;
