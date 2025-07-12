@@ -7,7 +7,7 @@ import {
 import express from 'express';
 import { join } from 'node:path';
 
-import { getHighlight, getServices } from './api';
+import { getBlogById, getBlogIds, getHighlight, getServices } from './api';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -17,6 +17,8 @@ const angularApp = new AngularNodeAppEngine();
 // Example requests for API REST
 app.get('/api/services', getServices);
 app.get('/api/highlight', getHighlight);
+app.get('/api/blog/ids', getBlogIds);
+app.get('/api/blog/:id', getBlogById);
 
 /**
  * Serve static files from /browser

@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'actualidad',
     loadComponent: () => import('@/modules/index').then((m) => m.Highlight),
   },
+  {
+    path: 'blog/:slug',
+    loadComponent: () => import('@/modules/index').then((m) => m.BlogDetail),
+  },
 ];

@@ -1,0 +1,48 @@
+<article
+  class="sh-blog-detail"
+  aria-labelledby="blog-title"
+  aria-describedby="blog-meta blog-cover-caption blog-content"
+>
+  <header class="sh-blog-detail__header">
+    <h1 id="blog-title">
+      <a
+        class="sh-blog-detail__back"
+        routerLink="/actualidad"
+        aria-label="Volver a la lista de blogs"
+      >
+        <mat-icon aria-hidden="true">chevron_left</mat-icon>
+      </a>
+      {{ blog()?.title }}
+    </h1>
+    <div class="sh-blog-detail__meta" id="blog-meta">
+      <span aria-hidden="true">💻</span> Publicado el
+      <time [attr.datetime]="blog()?.date" aria-label="Fecha de publicación">{{
+        blog()?.date
+      }}</time>
+      por
+      <span class="sh-blog-detail__author">
+        <b>{{ blog()?.author }}</b>
+      </span>
+    </div>
+    <figure>
+      <img [src]="blog()?.coverImage" [alt]="blog()?.coverCaption" role="img" />
+      <figcaption id="blog-cover-caption">
+        {{ blog()?.coverCaption }}
+      </figcaption>
+    </figure>
+  </header>
+
+  <section class="sh-blog-detail__content" id="blog-content">
+    @for(content of blog()?.content; track $index) { @if(content.type ===
+    'paragraph') {
+    <p tabindex="0">{{ content.text }}</p>
+    } @if(content.type === 'image') {
+    <figure>
+      <img [src]="content.url" [alt]="content.caption" role="img" />
+      <figcaption>{{ content.caption }}</figcaption>
+    </figure>
+    } }
+  </section>
+</article>
+
+<app-loader />

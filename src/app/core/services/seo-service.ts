@@ -37,4 +37,44 @@ export class SeoService {
         'SSR, Angular, Next.js, Frontend, Noticias, Blogs, JavaScript, Renderizado en servidor, SEO, Tendencias',
     });
   }
+
+  applyBlogDetailSEO(title: string, description: string, image?: string) {
+    this.titlePlatform.setTitle(
+      `${title} | ED Posts - Blog de Tecnología y SSR`
+    );
+    this.metaPlatform.updateTag({
+      name: 'description',
+      content: description,
+    });
+    this.metaPlatform.updateTag({
+      name: 'keywords',
+      content: `${title}, SSR, Angular, Next.js, Frontend, Blog, Tecnología, Renderizado en servidor, ED Posts`,
+    });
+    // Open Graph para Facebook
+    this.metaPlatform.updateTag({ property: 'og:title', content: title });
+    this.metaPlatform.updateTag({
+      property: 'og:description',
+      content: description,
+    });
+    if (image) {
+      this.metaPlatform.updateTag({ property: 'og:image', content: image });
+      this.metaPlatform.updateTag({ name: 'twitter:image', content: image });
+    }
+    this.metaPlatform.updateTag({ property: 'og:type', content: 'article' });
+    this.metaPlatform.updateTag({
+      property: 'og:site_name',
+      content: 'ED Posts',
+    });
+    // Twitter Card
+    this.metaPlatform.updateTag({
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    });
+    this.metaPlatform.updateTag({ name: 'twitter:title', content: title });
+    this.metaPlatform.updateTag({
+      name: 'twitter:description',
+      content: description,
+    });
+    this.metaPlatform.updateTag({ name: 'twitter:site', content: '@edposts' });
+  }
 }
